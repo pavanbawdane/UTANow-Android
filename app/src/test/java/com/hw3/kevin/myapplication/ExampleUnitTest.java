@@ -1,4 +1,4 @@
-package com.hw3.kevin.myapplication;
+package com.mobi.utanow.myapplication;
 
 import org.junit.Test;
 

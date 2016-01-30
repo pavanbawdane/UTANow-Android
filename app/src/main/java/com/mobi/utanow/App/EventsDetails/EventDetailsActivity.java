@@ -1,4 +1,4 @@
-package com.hw3.kevin.myapplication.App.EventsDetails;
+package com.mobi.utanow.App.EventsDetails;
 
 /**
  * Created by Anthony on 11/13/15.

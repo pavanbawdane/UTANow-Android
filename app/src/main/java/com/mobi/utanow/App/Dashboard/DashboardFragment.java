@@ -1,4 +1,4 @@
-package layout;
+package com.mobi.utanow.App.Dashboard;
 
 import android.content.Context;
 import android.net.Uri;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,12 @@ import com.mobi.utanow.myapplication.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LoginFragment.OnFragmentInteractionListener} interface
+ * {@link DashboardFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LoginFragment#newInstance} factory method to
+ * Use the {@link DashboardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LoginFragment extends Fragment {
+public class DashboardFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -35,7 +36,7 @@ public class LoginFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public LoginFragment() {
+    public DashboardFragment() {
         // Required empty public constructor
     }
 
@@ -43,11 +44,11 @@ public class LoginFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment LoginFragment.
+     * @return A new instance of fragment DashboardFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LoginFragment newInstance(int page) {
-        LoginFragment fragment = new LoginFragment();
+    public static DashboardFragment newInstance(int page) {
+        DashboardFragment fragment = new DashboardFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         fragment.setArguments(args);
@@ -60,15 +61,17 @@ public class LoginFragment extends Fragment {
         if (getArguments() != null) {
             mPage = getArguments().getInt(ARG_PAGE);
         }
+        Log.d("Fragment","Fragment Created");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        TextView textView = (TextView) view;
+        View view = inflater.inflate(R.layout.dashboard_login, container, false);
+        TextView textView = (TextView) view.findViewById(R.id.test);
         textView.setText("Fragment #"+mPage);
+        Log.d("On create view", "Fragment Created");
         return view;
     }
 
@@ -112,7 +115,7 @@ public class LoginFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            return LoginFragment.newInstance(position + 1);
+            return DashboardFragment.newInstance(position + 1);
         }
 
         @Override

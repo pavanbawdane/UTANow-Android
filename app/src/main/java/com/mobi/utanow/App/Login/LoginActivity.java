@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +14,10 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
-import com.facebook.login.LoginManager;
 import com.facebook.login.widget.LoginButton;
 import com.mobi.utanow.App.Dashboard.DashboardActivity;
 import com.mobi.utanow.myapplication.R;
 
-import java.io.Console;
 import java.util.Arrays;
 
 /**
@@ -41,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         callbackManager = CallbackManager.Factory.create();
         context = this;
+
 
         // Check if user is already logged in
         if(AccessToken.getCurrentAccessToken()!=null) {
